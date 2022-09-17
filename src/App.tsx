@@ -81,12 +81,9 @@ function App() {
   }
 
   const checkMatch = (card: CardType) => {
-    console.log('firstCardInPair', firstCardInPair);
-    console.log('card', card)
 
     if (firstCardInPair) {
       if (firstCardInPair.src === card.src) {
-        console.log('matched1231')
         setCards((prevCards) => {
           return prevCards.map((cardItem) => {
             if (cardItem.src === firstCardInPair.src) {
@@ -114,8 +111,6 @@ function App() {
       setFirstCardInPair(card)
     }
   }
-
-  console.log(cards, gameNumber);
 
   return (
     <div className={classes.main}>
