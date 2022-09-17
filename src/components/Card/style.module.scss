@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  position: relative;
+  height: 140px;
+  width: 140px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  transform: translateX(0);
+}
+
+.cardContent {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(255, 179, 0);
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card.isBackSide {
+  transform: translateX(-100%) rotateY(-180deg);
+}
