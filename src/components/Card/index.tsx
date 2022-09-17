@@ -7,7 +7,7 @@ import { getClassNames } from '../../helpers'
 import classes from './style.module.scss'
 
 interface Iprops {
-  onClick: () => void,
+  onClick: (card: CardType) => void,
   card: CardType,
 }
 
@@ -16,12 +16,6 @@ function Card(props: Iprops) {
 
   const onChangeCardSide = () => {
       onClick(card)
-    
-    // переворачивает карточку
-    // if (!card.matched) {
-    //   onClick(card)
-    //   setIsBackSide(!isBackSide)
-    // }
   }
 
 

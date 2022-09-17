@@ -12,6 +12,7 @@ import cardEagle from './images/eagle.png'
 import cardRabbit from './images/rabbit.png'
 
 import classes from './style.module.scss'
+import { CardType } from './types'
 
 const cardImage = [
   { "src": cardCat, matched: false, isOpen: false },
@@ -32,13 +33,13 @@ const cardImage = [
   { "src": cardEagle, matched: false, isOpen: false },
 ]
 
+
 function App() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState<CardType[]>([])
   const [gameNumber, setGameNumber] = useState(0)
-  const [firstCardInPair, setFirstCardInPair] = useState(null)
+  const [firstCardInPair, setFirstCardInPair] = useState<CardType | null>(null)
   const [isDisabled, setIsDisabled] = useState(false)
 
- 
   const shuffledCards = () => {
     const shuffledCards = [...cardImage]
       .sort(() => Math.random() - 0.5)
@@ -52,7 +53,7 @@ function App() {
     shuffledCards()
   }, [])
 
-  const onClickCard = (card) => {
+  const onClickCard = (card: CardType) => {
     if (isDisabled) {
       return
     }
@@ -67,7 +68,7 @@ function App() {
     }
   }
 
-  const toggleCardIsOpen = (card) => {
+  const toggleCardIsOpen = (card: CardType) => {
 
     setCards((prevCards) => {
       return prevCards.map((cardItem) => {
@@ -79,7 +80,7 @@ function App() {
     })
   }
 
-  const checkMatch = (card) => {
+  const checkMatch = (card: CardType) => {
     console.log('firstCardInPair', firstCardInPair);
     console.log('card', card)
 
@@ -132,7 +133,6 @@ function App() {
               key={card.id}
               onClick={onClickCard}
               card={card}
-              disabled={isDisabled}
             />
           )
         })}
