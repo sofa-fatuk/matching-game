@@ -45,17 +45,7 @@ function MainPage() {
 
   const toggleCardIsOpen = (card: CardType) => {
     dispatch(toggleCardsIsOpen(card.id))
-    // setCards((prevCards) => {
-      // return prevCards.map((cardItem) => {
-      //   if (cardItem.id === card.id) {
-      //     return {...cardItem, isOpen: !cardItem.isOpen}
-      //   }
-      //   return cardItem
-      // })
-    // })
   }
-
-  // cards.every(cardItem => cardItem.matched)
 
   const checkMatch = (card: CardType) => {
 
@@ -75,8 +65,6 @@ function MainPage() {
       setFirstCardInPair(card)
     }
   }
-
-  // console.log(cards.every(cardItem => cardItem.matched === true));
   
 
   useEffect(() => {
